@@ -180,7 +180,7 @@ def gen_val(network):
 			empirical_rwr[i[0]]=pagerank
 
 		if i[0]==2 and pos==True:
-			network = Graph.Read_Ncol("/nfs/research/petsalaki/shared_folder/diffusion/networks/square/"+sim_type+".txt", weights=True, directed=False)
+			network = Graph.Read_Ncol("/nfs/research/petsalaki/shared_folder/diffusion/networks/old_net/square/"+sim_type+".txt", weights=True, directed=False)
 			pos=False
 			flag_pos=0
 			to_delete=[]
@@ -191,7 +191,7 @@ def gen_val(network):
 
 	for ii in range(1000):
 
-		network_random = Graph.Read_Ncol("/nfs/research/petsalaki/shared_folder/diffusion/networks/square/"+sim_type+"_random/"+str(ii)+".txt", weights=True, directed=False)
+		network_random = Graph.Read_Ncol("/nfs/research/petsalaki/shared_folder/diffusion/networks/old_net/square/"+sim_type+"_random/"+str(ii)+".txt", weights=True, directed=False)
 		nodes=network_random.vs["name"]
 		number_of_nodes=network_random.vcount()
 		random_rwr=np.zeros((6,number_of_nodes),dtype=float)
@@ -237,7 +237,7 @@ def gen_val(network):
 						prandom=np.concatenate((prandom[:j], [0], prandom[j:]))
 
 				if jj[0]==2 and pos==True:
-					network_random = Graph.Read_Ncol("/nfs/research/petsalaki/shared_folder/diffusion/networks/square/"+sim_type+"_random/"+str(ii)+".txt", weights=True, directed=False)
+					network_random = Graph.Read_Ncol("/nfs/research/petsalaki/shared_folder/diffusion/networks/old_net/square/"+sim_type+"_random/"+str(ii)+".txt", weights=True, directed=False)
 					flag_pos=0
 					pos=False
 					to_delete=[]
@@ -245,7 +245,7 @@ def gen_val(network):
 				random_rwr[jj[0]]=prandom
 			else:
 				if jj[0]==2:
-					network_random = Graph.Read_Ncol("/nfs/research/petsalaki/shared_folder/diffusion/networks/square/"+sim_type+"_random/"+str(ii)+".txt", weights=True, directed=False)
+					network_random = Graph.Read_Ncol("/nfs/research/petsalaki/shared_folder/diffusion/networks/old_net/square/"+sim_type+"_random/"+str(ii)+".txt", weights=True, directed=False)
 					flag_pos=0
 					pos=False
 					to_delete=[]
@@ -427,7 +427,7 @@ if __name__ == '__main__':
 	res_folder=sys.argv[6]
 	data_folder=sys.argv[7]
 	#load network
-	network = Graph.Read_Ncol("/nfs/research/petsalaki/shared_folder/diffusion/networks/square/"+sim_type+".txt", weights=True, directed=False)
+	network = Graph.Read_Ncol("/nfs/research/petsalaki/shared_folder/diffusion/networks/old_net/square/"+sim_type+".txt", weights=True, directed=False)
 	graph_nodes=network.vs["name"]
 	number_of_nodes=network.vcount()
 

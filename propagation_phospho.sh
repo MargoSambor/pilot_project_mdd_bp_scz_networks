@@ -47,4 +47,4 @@ while read -r test
 				bsub -q research -M 2048 -R "rusage[mem=2048]" -o log_ph.txt -e err_ph.txt python propagation_phospho.py $j $k $test $results_folder $data_folder
 			done
 		done
-	done < ../data/TCGA.txt
+	done < /nfs/research/petsalaki/shared_folder/diffusion/data/TCGA.txt
