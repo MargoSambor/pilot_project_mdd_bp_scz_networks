@@ -29,7 +29,7 @@ for ii in "top_200_30_30_70_70" "top_200_35_35_75_75" "top_200_50_50_75_75" "top
 '
 
 results_folder="netextract_results/commonmind_scz_padj_0.05"
-data_folder=""
+data_folder="/nfs/research/petsalaki/users/sambor/pilot_project_mdd_bp_scz_networks-main/"
 while read -r test
 	do
 	stringarray=($test)
