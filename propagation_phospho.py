@@ -427,7 +427,7 @@ if __name__ == '__main__':
 	res_folder=sys.argv[6]
 	data_folder=sys.argv[7]
 	#load network
-	network = Graph.Read_Ncol("/nfs/research/petsalaki/shared_folder/diffusion/networks/old_net/"+sim_type+".txt", weights=True, directed=False)
+	network = Graph.Read_Ncol("/nfs/research/petsalaki/shared_folder/diffusion/networks/old_net/square/"+sim_type+".txt", weights=True, directed=False)
 	graph_nodes=network.vs["name"]
 	number_of_nodes=network.vcount()
 
