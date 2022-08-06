@@ -82,7 +82,7 @@ def load_seeds(test,graph_nodes,sem_sim):
 		zscores_global[seq[0]]=np.array(seq[mapping[sem_sim]].split("|"),dtype=float)
 		seq=f1.readline()
 	#change the datapath
-	data_path="/nfs/research/petsalaki/users/sambor/pilot_project_mdd_bp_scz_networks-main/"
+	data_path="../data/datasets/"+data_folder+"/"
 	f1=open(data_path+test)
 	seq=f1.readline()
 	ssim={}
@@ -427,7 +427,7 @@ if __name__ == '__main__':
 	res_folder=sys.argv[6]
 	data_folder=sys.argv[7]
 	#load network
-	network = Graph.Read_Ncol("/nfs/research/petsalaki/shared_folder/diffusion/networks/old_net/square/"+sim_type+".txt", weights=True, directed=False)
+	network = Graph.Read_Ncol("/nfs/research/petsalaki/shared_folder/diffusion/networks/old_net/"+sim_type+".txt", weights=True, directed=False)
 	graph_nodes=network.vs["name"]
 	number_of_nodes=network.vcount()
 

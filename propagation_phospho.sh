@@ -39,10 +39,10 @@ while read -r test
 			do
         	               for i in "0.75" "0.8" "0.85" "0.9" "0.95"
        	        	       do
-					mkdir -p ../$results_folder/$j/$k/${stringarray[0]}/upregulated/fisher/proteome/$i
-                       	        	mkdir -p ../$results_folder/$j/$k/${stringarray[0]}/upregulated/cluster/$i
-                                        mkdir -p ../$results_folder/$j/$k/${stringarray[0]}/downregulated/fisher/proteome/$i
-	                                mkdir -p ../$results_folder/$j/$k/${stringarray[0]}/downregulated/cluster/$i
+					mkdir -p /nfs/research/petsalaki/users/sambor/pilot_project_mdd_bp_scz_networks-main/$results_folder/$j/$k/${stringarray[0]}/upregulated/fisher/proteome/$i
+                       	        	mkdir -p /nfs/research/petsalaki/users/sambor/pilot_project_mdd_bp_scz_networks-main/$results_folder/$j/$k/${stringarray[0]}/upregulated/cluster/$i
+                                        mkdir -p /nfs/research/petsalaki/users/sambor/pilot_project_mdd_bp_scz_networks-main/$results_folder/$j/$k/${stringarray[0]}/downregulated/fisher/proteome/$i
+	                                mkdir -p /nfs/research/petsalaki/users/sambor/pilot_project_mdd_bp_scz_networks-main/$results_folder/$j/$k/${stringarray[0]}/downregulated/cluster/$i
 				done
 				bsub -q research -M 2048 -R "rusage[mem=2048]" -o log_ph.txt -e err_ph.txt python propagation_phospho.py $j $k $test $results_folder $data_folder
 			done
