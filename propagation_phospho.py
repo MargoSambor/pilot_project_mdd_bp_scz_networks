@@ -82,7 +82,7 @@ def load_seeds(test,graph_nodes,sem_sim):
 		zscores_global[seq[0]]=np.array(seq[mapping[sem_sim]].split("|"),dtype=float)
 		seq=f1.readline()
 	#change the datapath
-	data_path="../data/datasets/"+data_folder+"/"
+	data_path=data_folder
 	f1=open(data_path+test)
 	seq=f1.readline()
 	ssim={}
